@@ -33,9 +33,8 @@ def get_ppt_content(deck_path):
     return all_slide_info
 
 def describe_images_with_gemini(image_paths):
-    
-    image_summaries = {}
-    model = genai.GenerativeModel('gemini-1.5-flash-latest')
+    image_summaries={}
+    model = genai.GenerativeModel('gemini-2.5-flash') 
     
     for path in image_paths:
         slide_image = Image.open(path)
@@ -49,7 +48,7 @@ def describe_images_with_gemini(image_paths):
 
 def find_inconsistencies(all_slide_content):
     """Sends all presentation content to Gemini for a full inconsistency analysis."""
-    model = genai.GenerativeModel('gemini-1.5-flash-latest')
+    model = genai.GenerativeModel('gemini-2.5-flash') # Updated here
     
     combined_content = "Here is the content from a multi-slide PowerPoint presentation:\n\n"
     for slide_name, content in all_slide_content.items():

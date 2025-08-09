@@ -1,0 +1,4 @@
+python-pptx
+Pillow
+google-generativeai
+python-dotenv
